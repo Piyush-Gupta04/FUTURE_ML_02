@@ -1,0 +1,221 @@
+{
+  "ticket_type": {
+    "best_model": "ComplementNB",
+    "results": {
+      "LogisticRegression": {
+        "accuracy": 0.21310507674144039,
+        "macro_precision": 0.2129406606435505,
+        "macro_recall": 0.21380718821103728,
+        "macro_f1": 0.21280112692596537,
+        "weighted_f1": 0.21242482274631033,
+        "labels": [
+          "Billing inquiry",
+          "Cancellation request",
+          "Product inquiry",
+          "Refund request",
+          "Technical issue"
+        ],
+        "report_text": "                      precision    recall  f1-score   support\n\n     Billing inquiry       0.21      0.23      0.22       327\nCancellation request       0.22      0.22      0.22       339\n     Product inquiry       0.22      0.25      0.23       328\n      Refund request       0.21      0.18      0.19       351\n     Technical issue       0.22      0.19      0.20       349\n\n            accuracy                           0.21      1694\n           macro avg       0.21      0.21      0.21      1694\n        weighted avg       0.21      0.21      0.21      1694\n",
+        "cv_accuracy_mean": 0.18863468634686345,
+        "cv_accuracy_std": 0.010401454126906498,
+        "cv_macro_f1_mean": 0.18876670786886254,
+        "cv_macro_f1_std": 0.010661829181926223
+      },
+      "LinearSVC": {
+        "accuracy": 0.2190082644628099,
+        "macro_precision": 0.16617757865797783,
+        "macro_recall": 0.21217144701112955,
+        "macro_f1": 0.13199136720592763,
+        "weighted_f1": 0.136020614596156,
+        "labels": [
+          "Billing inquiry",
+          "Cancellation request",
+          "Product inquiry",
+          "Refund request",
+          "Technical issue"
+        ],
+        "report_text": "                      precision    recall  f1-score   support\n\n     Billing inquiry       0.00      0.00      0.00       327\nCancellation request       0.25      0.02      0.04       339\n     Product inquiry       0.14      0.00      0.01       328\n      Refund request       0.21      0.52      0.30       351\n     Technical issue       0.23      0.52      0.32       349\n\n            accuracy                           0.22      1694\n           macro avg       0.17      0.21      0.13      1694\n        weighted avg       0.17      0.22      0.14      1694\n",
+        "cv_accuracy_mean": 0.21210332103321033,
+        "cv_accuracy_std": 0.011217712177121773,
+        "cv_macro_f1_mean": 0.1419700827028257,
+        "cv_macro_f1_std": 0.004394705661377264
+      },
+      "ComplementNB": {
+        "accuracy": 0.21605667060212513,
+        "macro_precision": 0.21588600271919542,
+        "macro_recall": 0.21631957096062565,
+        "macro_f1": 0.21593719309421688,
+        "weighted_f1": 0.21582550976887616,
+        "labels": [
+          "Billing inquiry",
+          "Cancellation request",
+          "Product inquiry",
+          "Refund request",
+          "Technical issue"
+        ],
+        "report_text": "                      precision    recall  f1-score   support\n\n     Billing inquiry       0.20      0.20      0.20       327\nCancellation request       0.22      0.22      0.22       339\n     Product inquiry       0.23      0.25      0.24       328\n      Refund request       0.21      0.20      0.20       351\n     Technical issue       0.22      0.21      0.22       349\n\n            accuracy                           0.22      1694\n           macro avg       0.22      0.22      0.22      1694\n        weighted avg       0.22      0.22      0.22      1694\n",
+        "cv_accuracy_mean": 0.19439114391143913,
+        "cv_accuracy_std": 0.010952387577322,
+        "cv_macro_f1_mean": 0.1941365913559448,
+        "cv_macro_f1_std": 0.011365309197510982
+      },
+      "RuleBasedBaseline": {
+        "accuracy": 0.1959858323494687,
+        "macro_precision": 0.18717815912806635,
+        "macro_recall": 0.19710624660551784,
+        "macro_f1": 0.1499787338427591,
+        "weighted_f1": 0.15028129891995634,
+        "labels": [
+          "Billing inquiry",
+          "Cancellation request",
+          "Product inquiry",
+          "Refund request",
+          "Technical issue"
+        ],
+        "report_text": "                      precision    recall  f1-score   support\n\n     Billing inquiry       0.13      0.01      0.02       327\nCancellation request       0.18      0.06      0.09       339\n     Product inquiry       0.19      0.53      0.28       328\n      Refund request       0.22      0.07      0.11       351\n     Technical issue       0.20      0.31      0.24       349\n\n            accuracy                           0.20      1694\n           macro avg       0.19      0.20      0.15      1694\n        weighted avg       0.19      0.20      0.15      1694\n"
+      }
+    }
+  },
+  "ticket_priority_4class": {
+    "best_model": "LogisticRegression",
+    "results": {
+      "LogisticRegression": {
+        "accuracy": 0.256788665879575,
+        "macro_precision": 0.2569721905716722,
+        "macro_recall": 0.25615975528825663,
+        "macro_f1": 0.2562404272858544,
+        "weighted_f1": 0.2574764842757199,
+        "labels": [
+          "Critical",
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n    Critical       0.26      0.25      0.26       441\n        High       0.28      0.26      0.27       424\n         Low       0.21      0.24      0.22       375\n      Medium       0.28      0.27      0.27       454\n\n    accuracy                           0.26      1694\n   macro avg       0.26      0.26      0.26      1694\nweighted avg       0.26      0.26      0.26      1694\n",
+        "cv_accuracy_mean": 0.24856088560885609,
+        "cv_accuracy_std": 0.010230390229469201,
+        "cv_macro_f1_mean": 0.2484037754571779,
+        "cv_macro_f1_std": 0.010378394079221793
+      },
+      "LinearSVC": {
+        "accuracy": 0.26741440377804016,
+        "macro_precision": 0.3315561786218472,
+        "macro_recall": 0.25253650947260015,
+        "macro_f1": 0.1646633949724028,
+        "weighted_f1": 0.17115467477477328,
+        "labels": [
+          "Critical",
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n    Critical       0.27      0.12      0.16       441\n        High       0.50      0.00      0.00       424\n         Low       0.29      0.05      0.09       375\n      Medium       0.27      0.84      0.40       454\n\n    accuracy                           0.27      1694\n   macro avg       0.33      0.25      0.16      1694\nweighted avg       0.33      0.27      0.17      1694\n",
+        "cv_accuracy_mean": 0.2448708487084871,
+        "cv_accuracy_std": 0.005057370243250716,
+        "cv_macro_f1_mean": 0.17892372999262887,
+        "cv_macro_f1_std": 0.01184406807788043
+      },
+      "ComplementNB": {
+        "accuracy": 0.24557260920897284,
+        "macro_precision": 0.2459946533376075,
+        "macro_recall": 0.24464401175647718,
+        "macro_f1": 0.24486209599781955,
+        "weighted_f1": 0.24621709753960058,
+        "labels": [
+          "Critical",
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n    Critical       0.25      0.26      0.25       441\n        High       0.27      0.24      0.25       424\n         Low       0.20      0.22      0.21       375\n      Medium       0.27      0.26      0.26       454\n\n    accuracy                           0.25      1694\n   macro avg       0.25      0.24      0.24      1694\nweighted avg       0.25      0.25      0.25      1694\n",
+        "cv_accuracy_mean": 0.24649446494464944,
+        "cv_accuracy_std": 0.01586286735070456,
+        "cv_macro_f1_mean": 0.2454141362299072,
+        "cv_macro_f1_std": 0.016553216255400557
+      },
+      "RuleBasedBaseline": {
+        "accuracy": 0.27213695395513576,
+        "macro_precision": 0.20020200805490213,
+        "macro_recall": 0.2553286085303819,
+        "macro_f1": 0.16179511887116388,
+        "weighted_f1": 0.17096964548463672,
+        "labels": [
+          "Critical",
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n    Critical       0.32      0.11      0.17       441\n        High       0.21      0.04      0.07       424\n         Low       0.00      0.00      0.00       375\n      Medium       0.27      0.87      0.41       454\n\n    accuracy                           0.27      1694\n   macro avg       0.20      0.26      0.16      1694\nweighted avg       0.21      0.27      0.17      1694\n"
+      }
+    }
+  },
+  "ticket_priority_3class": {
+    "best_model": "LogisticRegression",
+    "results": {
+      "LogisticRegression": {
+        "accuracy": 0.3512396694214876,
+        "macro_precision": 0.3390605585964803,
+        "macro_recall": 0.3401011999241736,
+        "macro_f1": 0.3332819654357982,
+        "weighted_f1": 0.3618020777183593,
+        "labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n        High       0.51      0.38      0.44       865\n         Low       0.23      0.32      0.27       375\n      Medium       0.28      0.31      0.30       454\n\n    accuracy                           0.35      1694\n   macro avg       0.34      0.34      0.33      1694\nweighted avg       0.39      0.35      0.36      1694\n",
+        "cv_accuracy_mean": 0.33845018450184505,
+        "cv_accuracy_std": 0.012158993550771347,
+        "cv_macro_f1_mean": 0.32353655373548695,
+        "cv_macro_f1_std": 0.011884862011919685
+      },
+      "LinearSVC": {
+        "accuracy": 0.5106257378984652,
+        "macro_precision": 0.1702085792994884,
+        "macro_recall": 0.3333333333333333,
+        "macro_f1": 0.2253484434023707,
+        "weighted_f1": 0.34520614558981816,
+        "labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n        High       0.51      1.00      0.68       865\n         Low       0.00      0.00      0.00       375\n      Medium       0.00      0.00      0.00       454\n\n    accuracy                           0.51      1694\n   macro avg       0.17      0.33      0.23      1694\nweighted avg       0.26      0.51      0.35      1694\n",
+        "cv_accuracy_mean": 0.49431734317343173,
+        "cv_accuracy_std": 0.00029520295202953853,
+        "cv_macro_f1_mean": 0.22053205159485353,
+        "cv_macro_f1_std": 8.81601847785518e-05
+      },
+      "ComplementNB": {
+        "accuracy": 0.3825265643447462,
+        "macro_precision": 0.327368891177867,
+        "macro_recall": 0.32681784409756703,
+        "macro_f1": 0.3264005653151599,
+        "weighted_f1": 0.37692275371692624,
+        "labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n        High       0.49      0.53      0.51       865\n         Low       0.22      0.21      0.21       375\n      Medium       0.27      0.24      0.25       454\n\n    accuracy                           0.38      1694\n   macro avg       0.33      0.33      0.33      1694\nweighted avg       0.37      0.38      0.38      1694\n",
+        "cv_accuracy_mean": 0.393210332103321,
+        "cv_accuracy_std": 0.008934462553754416,
+        "cv_macro_f1_mean": 0.335131119029325,
+        "cv_macro_f1_std": 0.011727086987448723
+      },
+      "RuleBasedBaseline": {
+        "accuracy": 0.30932703659976385,
+        "macro_precision": 0.2729806250826554,
+        "macro_recall": 0.3393768090108901,
+        "macro_f1": 0.2160947398178407,
+        "weighted_f1": 0.23098594016372118,
+        "labels": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "report_text": "              precision    recall  f1-score   support\n\n        High       0.55      0.15      0.24       865\n         Low       0.00      0.00      0.00       375\n      Medium       0.27      0.87      0.41       454\n\n    accuracy                           0.31      1694\n   macro avg       0.27      0.34      0.22      1694\nweighted avg       0.35      0.31      0.23      1694\n"
+      }
+    }
+  }
+}

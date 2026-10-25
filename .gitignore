@@ -3,6 +3,15 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Data and Artifacts (PII Protection & Large Files)
+Data/
+data/
+*.csv
+models/*.joblib
+models/*.pkl
+reports/figures/*.png
+!reports/figures/.gitkeep
+
 # C extensions
 *.so
 
