@@ -3,14 +3,18 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-# Data and Artifacts (PII Protection & Large Files)
-Data/
-data/
+# Data and Artifacts (PII Protection, Large Files, Credentials)
+/Data/
+/data/
+!/src/data/
 *.csv
 models/*.joblib
 models/*.pkl
-reports/figures/*.png
-!reports/figures/.gitkeep
+.env
+*.env
+*.pem
+*.key
+credentials.json
 
 # C extensions
 *.so

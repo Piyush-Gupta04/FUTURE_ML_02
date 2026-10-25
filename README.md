@@ -11,10 +11,10 @@ An end-to-end, reproducible Machine Learning and Natural Language Processing (NL
 
 ## 1. Executive Summary & Project Structure
 
-This project delivers a production-ready triage system that processes incoming ticket subjects and descriptions, cleans template artifacts, strips Personally Identifiable Information (PII), prevents post-outcome target leakage, and predicts:
+This project provides an **experimental support-ticket triage prototype** that processes incoming ticket subjects and descriptions, cleans template artifacts, strips Personally Identifiable Information (PII), prevents post-outcome target leakage, and predicts:
 1. **Ticket Category (Type)**: Multi-class categorization across 5 support domains.
 2. **Ticket Priority (Urgency Tiers)**: 4-tier original priority (`Critical`, `High`, `Medium`, `Low`) and operationally justified 3-tier priority (`High` [Critical + High], `Medium`, `Low`).
-3. **Deterministic Rule-Based Baseline**: Intent- and urgency-keyword heuristic engine serving as an explainable fallback in production environments.
+3. **Deterministic Rule-Based Baseline**: Intent- and urgency-keyword heuristic engine serving as an explainable fallback baseline. Because supervised classification accuracy on this benchmark dataset is near chance due to synthetic label assignment, this rule engine provides transparent, deterministic heuristics for triage.
 
 ### Repository Layout
 ```text
@@ -142,6 +142,16 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+### Dataset Acquisition & Placement
+The project uses the publicly available Kaggle **Customer Support Ticket Dataset**:
+1. Download `customer_support_tickets.csv` from [Kaggle](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset) (or use your own raw ticket CSV).
+2. Place the downloaded file into either:
+   ```text
+   Data/Raw/customer_support_tickets.csv
+   ```
+   *(or `data/raw/customer_support_tickets.csv`)*
+3. **Data Privacy Notice**: Never commit `customer_support_tickets.csv` or any real customer PII to version control. The repository `.gitignore` automatically blocks all `.csv` files and data folders.
+
 ---
 
 ## 5. Usage Guide
@@ -194,13 +204,13 @@ python -m pytest -v
 
 ---
 
-## 6. Limitations & Production Recommendations
+## 6. Limitations & Production Transition Roadmap
 
-1. **Synthetic Noise in Benchmark Data**: Because the Kaggle dataset pairs randomly generated templates with ground-truth labels, supervised statistical learning is bounded by label noise.
-2. **Hybrid Production Architecture**: In production deployments, we recommend combining:
+1. **Synthetic Noise in Benchmark Data**: Because the Kaggle dataset pairs randomly generated templates with ground-truth labels, supervised statistical learning is bounded by label noise (achieving near-chance accuracy).
+2. **Hybrid Architecture for Future Production Transition**: For moving beyond this experimental prototype towards production, we recommend combining:
    - The **Deterministic Rule Engine** (`src/models/rule_based.py`) as a high-confidence primary router for explicit intents (e.g., words like `refund`, `chargeback`, `cancel subscription`, `system down`).
-   - The **TF-IDF Supervised Classifier** (`src/models/train_model.py`) as an automated fallback when real-world human-annotated ticket data is collected.
-3. **Active Learning Loop**: Implement a feedback mechanism where human customer service representatives flag misclassified tickets to continuously retrain the TF-IDF pipeline on non-synthetic customer text.
+   - The **TF-IDF Supervised Classifier** (`src/models/train_model.py`) as an automated fallback once real-world, non-synthetic human-annotated ticket data is collected.
+3. **Active Learning Loop**: Implement a feedback mechanism where human customer service representatives flag misclassified tickets to continuously retrain the TF-IDF pipeline on verified customer text.
 
 ---
 
